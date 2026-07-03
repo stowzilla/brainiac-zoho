@@ -24,7 +24,7 @@ Config lives at `~/.brainiac/zoho.json`:
 {
   "hook_secret": null,
   "default_discord_channel_id": "YOUR_CHANNEL_ID",
-  "notify_as": "threepio",
+  "notify_as": "merlin",
   "rules": [
     {
       "label": "Item Sold",

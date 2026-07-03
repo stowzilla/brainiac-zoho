@@ -38,7 +38,7 @@ module Brainiac
             default_config = {
               "hook_secret" => nil,
               "default_discord_channel_id" => "",
-              "notify_as" => "threepio",
+              "notify_as" => "merlin",
               "rules" => [],
               "fallback" => { "enabled" => true, "label" => "Unmatched Email", "emoji" => "📬" }
             }

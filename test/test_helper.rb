@@ -26,7 +26,7 @@ unless defined?(LOG)
   end.new
 end
 
-AI_AGENT_NAME = "Galen" unless defined?(AI_AGENT_NAME)
+AI_AGENT_NAME = "Sherlock" unless defined?(AI_AGENT_NAME)
 
 # Stub core Brainiac module with hooks
 module Brainiac
@@ -63,8 +63,8 @@ end
 
 # Stub core constants
 AGENT_REGISTRY = {
-  "galen" => { "display_name" => "Galen", "local" => true, "env" => {} },
-  "threepio" => { "display_name" => "Threepio", "local" => true, "env" => {} }
+  "sherlock" => { "display_name" => "Sherlock", "local" => true, "env" => {} },
+  "merlin" => { "display_name" => "Merlin", "local" => true, "env" => {} }
 }.freeze
 
 PROJECTS = {
@@ -86,7 +86,7 @@ def send_notification(_type, _msg, **) = nil
 zoho_config = {
   "hook_secret" => "test-zoho-secret",
   "default_discord_channel_id" => "1234567890",
-  "notify_as" => "threepio",
+  "notify_as" => "merlin",
   "rules" => [
     { "label" => "Item Sold", "enabled" => true, "subject_contains" => "sold", "emoji" => "💰",
       "from_contains" => "", "to_contains" => "", "body_contains" => "", "exclude_words" => [] },

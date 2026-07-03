@@ -1,7 +1,7 @@
 {
   "hook_secret": null,
   "default_discord_channel_id": "YOUR_DISCORD_CHANNEL_ID",
-  "notify_as": "threepio",
+  "notify_as": "merlin",
   "rules": [
     {
       "label": "Item Sold",
