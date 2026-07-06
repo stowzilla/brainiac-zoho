@@ -37,7 +37,8 @@ module Brainiac
           else
             default_config = {
               "hook_secret" => nil,
-              "default_discord_channel_id" => "",
+              "default_notify_target" => "",
+              "notify_channel" => "discord",
               "notify_as" => "merlin",
               "rules" => [],
               "fallback" => { "enabled" => true, "label" => "Unmatched Email", "emoji" => "📬" }

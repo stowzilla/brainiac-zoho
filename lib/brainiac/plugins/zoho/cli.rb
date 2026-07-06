@@ -32,7 +32,8 @@ module Brainiac
               puts "Created #{config_file} from template"
             else
               puts "Template not found — creating minimal config"
-              default_config = { "hook_secret" => nil, "default_discord_channel_id" => "", "rules" => [], "fallback" => { "enabled" => true } }
+              default_config = { "hook_secret" => nil, "default_notify_target" => "", "notify_channel" => "discord", "rules" => [],
+                                 "fallback" => { "enabled" => true } }
               File.write(config_file, JSON.pretty_generate(default_config))
               puts "Created #{config_file}"
             end
@@ -54,7 +55,8 @@ module Brainiac
             puts "Zoho Configuration:"
             puts "  Config file: #{config_file}"
             puts "  Hook secret: #{config["hook_secret"] ? "captured" : "(pending — waiting for first webhook)"}"
-            puts "  Default channel: #{config["default_discord_channel_id"] || "(not set)"}"
+            puts "  Default channel: #{config["default_notify_target"] || "(not set)"}"
+            puts "  Notify channel: #{config["notify_channel"] || "discord"}"
             puts "  Notify as: #{config["notify_as"] || "(default)"}"
             puts "  Rules: #{rules.size} configured"
             rules.each { |r| puts "    - #{r["label"]} (#{r["enabled"] == false ? "disabled" : "enabled"})" }

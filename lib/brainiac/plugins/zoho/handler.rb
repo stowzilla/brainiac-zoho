@@ -70,7 +70,7 @@ module Brainiac
           end
 
           def notify_match(email, rule)
-            target = rule["notify_target"] || rule["discord_channel_id"] || Config.default_notify_target
+            target = rule["notify_target"] || Config.default_notify_target
             channel = rule["notify_channel"] || Config.notify_channel
 
             unless target
@@ -107,7 +107,8 @@ module Brainiac
 
             { "label" => fallback["label"] || "Unmatched Email",
               "emoji" => fallback["emoji"] || "📬",
-              "discord_channel_id" => fallback["discord_channel_id"],
+              "notify_target" => fallback["notify_target"],
+              "notify_channel" => fallback["notify_channel"],
               "notify_as" => fallback["notify_as"] }
           end
 

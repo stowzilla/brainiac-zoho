@@ -85,7 +85,7 @@ def send_notification(_type, _msg, **) = nil
 # Write zoho.json for tests
 zoho_config = {
   "hook_secret" => "test-zoho-secret",
-  "default_discord_channel_id" => "1234567890",
+  "default_notify_target" => "1234567890", "notify_channel" => "discord",
   "notify_as" => "merlin",
   "rules" => [
     { "label" => "Item Sold", "enabled" => true, "subject_contains" => "sold", "emoji" => "💰",

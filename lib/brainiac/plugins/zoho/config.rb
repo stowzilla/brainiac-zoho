@@ -36,7 +36,7 @@ module Brainiac
           end
 
           def default_notify_target
-            @config["default_notify_target"] || @config["default_discord_channel_id"]
+            @config["default_notify_target"]
           end
 
           def notify_channel

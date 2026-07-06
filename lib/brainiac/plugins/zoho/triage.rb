@@ -171,7 +171,7 @@ module Brainiac
           end
 
           def execute_decision(decision, email, rule)
-            channel_id = rule["notify_target"] || rule["discord_channel_id"] || Config.default_notify_target
+            channel_id = rule["notify_target"] || Config.default_notify_target
             notify_channel = rule["notify_channel"] || Config.notify_channel
             bot_name = rule["notify_as"] || Config.notify_as
 
