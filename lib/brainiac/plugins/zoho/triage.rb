@@ -68,6 +68,13 @@ module Brainiac
         class << self
           def dispatch(email, rule)
             agent_name = rule["dispatch_agent"]
+
+            email_message = "#{email["subject"]} #{email["fromAddress"]}"
+            if intent_skip?(email_message, agent_name: agent_name, source: :zoho, channel: "Zoho email triage")
+              LOG.info "[Zoho:Triage] Intent skip — not dispatching #{agent_name} for: #{email["subject"]}" if defined?(LOG)
+              return nil
+            end
+
             timestamp = Time.now.strftime("%Y%m%d-%H%M%S")
             triage_dir = File.join(ENV.fetch("BRAINIAC_DIR", File.join(Dir.home, ".brainiac")), "tmp", "zoho", "triage")
             FileUtils.mkdir_p(triage_dir)
