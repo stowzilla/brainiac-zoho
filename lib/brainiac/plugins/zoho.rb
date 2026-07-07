@@ -22,6 +22,7 @@ module Brainiac
         # @param app [Sinatra::Application] The running Brainiac server
         def register(app)
           Config.load!
+          register_agent_lifecycle_hooks!
           setup_routes(app)
           LOG.info "[Zoho] Plugin registered (webhook: /zoho)"
         end
@@ -48,6 +49,19 @@ module Brainiac
         end
 
         private
+
+        def register_agent_lifecycle_hooks!
+          Brainiac.on(:agent_added) do |ctx|
+            Config.reload!
+            LOG.info "[Zoho] Agent added: #{ctx[:display_name]} — config reloaded" if defined?(LOG)
+          end
+
+          Brainiac.on(:agent_removed) do |ctx|
+            Config.reload!
+            LOG.info "[Zoho] Agent removed: #{ctx[:agent_key]} — config reloaded" if defined?(LOG)
+          end
+        end
+
 
         def setup_routes(app)
           app.post "/zoho" do
