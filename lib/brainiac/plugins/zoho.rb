@@ -62,7 +62,6 @@ module Brainiac
           end
         end
 
-
         def setup_routes(app)
           app.post "/zoho" do
             content_type :json
