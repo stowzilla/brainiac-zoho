@@ -1,18 +1,21 @@
 {
   "hook_secret": null,
-  "default_discord_channel_id": "YOUR_DISCORD_CHANNEL_ID",
+  "default_notify_target": "YOUR_DISCORD_CHANNEL_ID",
+  "notify_channel": "discord",
   "notify_as": "merlin",
   "rules": [
     {
-      "label": "Item Sold",
+      "label": "Labs Contact",
       "enabled": true,
       "from_contains": "",
       "to_contains": "",
-      "subject_contains": "sold",
+      "subject_contains": "[Labs Contact]",
       "body_contains": "",
       "exclude_words": [],
-      "emoji": "💰",
-      "discord_channel_id": null,
+      "emoji": "🧪",
+      "show_body": true,
+      "notify_target": null,
+      "notify_channel": null,
       "notify_as": null
     }
   ],
@@ -21,7 +24,8 @@
     "label": "Unmatched Email",
     "emoji": "📬",
     "exclude_words": [],
-    "discord_channel_id": null,
+    "notify_target": null,
+    "notify_channel": null,
     "notify_as": null
   }
 }

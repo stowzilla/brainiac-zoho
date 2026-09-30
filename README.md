@@ -23,7 +23,8 @@ Config lives at `~/.brainiac/zoho.json`:
 ```json
 {
   "hook_secret": null,
-  "default_discord_channel_id": "YOUR_CHANNEL_ID",
+  "default_notify_target": "YOUR_CHANNEL_ID",
+  "notify_channel": "discord",
   "notify_as": "merlin",
   "rules": [
     {
